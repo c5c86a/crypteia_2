@@ -1,0 +1,38 @@
+<!--<div class="container"%>
+  <div class="container-fluid">
+    <h1>Cpypteia App</h1>
+    <br />
+    <div class="row">
+      <div class="col-md-2">
+        <h3>Index</h3>
+      </div>
+      <div class="col-md-1">
+        <h3>Type</h3>
+      </div>
+      <div class="col-md-2">
+        <h3>Host</h3>
+      </div>
+      <div class="col-md-3">
+        <h3>Asn Registry</h3>
+      </div>
+      <div class="col-md-2">
+        <h3>Country</h3>
+      </div>
+    </div>
+    <hr />
+    <%#@obj.body.hits.hits.each do |o|%>
+      <div class="row">
+        <div class="col-md-2"><%#=o._index%></div>
+        <div class="col-md-1"><%#=o._type%></div>
+        <div class="col-md-2"><%#=o.dig(:_source,:host)%></div>
+        <div class="col-md-3"><%#=o.dig(:_source,:asn_registry)%></div>
+        <div class="col-md-2"><%#=o.dig(:_source,:country)%></div>
+      </div>
+      <%#end%>
+
+    </div>
+  </div>
+-->
+<%@obj.hits.hits.each do |a|%>
+  <%=a._source%>
+<%end%>

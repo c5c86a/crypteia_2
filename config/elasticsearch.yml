@@ -1,0 +1,15 @@
+development: &default
+  host: 'localhost'
+  transport_options:
+    request:
+      timeout: !!integer 300
+
+test:
+  <<: *default
+staging:
+  <<: *default
+production:
+  host: 'http://10.50.11.50/'
+  transport_options:
+    request:
+      timeout: !!integer 300

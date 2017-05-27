@@ -1,0 +1,27 @@
+<%@response.body.to_a.last.each do |key|%>
+  <% next if key == 'hits'%>
+  <%key.to_a.each do |a|%>
+    <%next unless a.first == 'hits'%>
+    <%a.each do |one|%>
+      <hr/>
+      <% next if one == 'hits'%>
+      <%one.to_a.each do |final|%>
+        <%final.each do |fatality,brutality|%>
+          <%=brutality%>
+          <hr/>
+          <%if fatality == '_source'%>
+            <%brutality.each do |mortal,kombat|%>
+              <%kombat.message do |diablo,clone|%>
+                <%=diablo%>
+                <%=clone%>
+                <hr/>
+              <%end%>
+            <%end%>
+          <%end%>
+        <%end%>
+      <%end%>
+    <%end%>
+  </hr/>
+<%end%>
+<hr/>
+<%end%>
