@@ -8,10 +8,9 @@ class SearchController < ApplicationController
   end
 
   def asdf
-    #@response = Elasticsearch::Model.client.perform_request 'GET', '_cluster/health'
-    #@malakas =
+    url_key = File.read('.secrets/url').strip
     client = Elasticsearch::Model.client
-    client = Elasticsearch::Client.new url: 'URL_KEY',
+    client = Elasticsearch::Client.new url: url_key,
     transport_options: {
       ssl: {
         ca_file: 'public/elasticsearch_cert.pem',
