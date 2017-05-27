@@ -1,33 +1,25 @@
-ES-Tutorial
-===========
-
-This repository is a sample application for my Elastic Search with Ruby on Rails
-tutorial published on [tutorials.pluralsight.com][1]
-
-How to set it up
+Setup
 ----------------
 
-As usual you will need to:
+To setup locally, the following instructions have worked at ubuntu 16.10:
 
 ```bash
+gem install rails -v 5.0
+
+sudo apt-get install -y libpq-dev
+
+sudo sh -c "echo 'deb http://apt.postgresql.org/pub/repos/apt/ xenial-pgdg main' > /etc/apt/sources.list.d/pgdg.list"
+wget --quiet -O - http://apt.postgresql.org/pub/repos/apt/ACCC4CF8.asc | sudo apt-key add -
+sudo apt-get update
+sudo apt-get install -y postgresql-common
+sudo apt-get install -y postgresql-9.5 libpq-dev
+
+git clone https://github.com/nicosmaris/crypteia_2.git
+rake db:migrate RAILS_ENV=development
+
 bundle install
 rake db:migrate
+
+rails server
 ```
 
-Now you will need to turn an Elastic Search instance online on port `9300` and
-then initialise the sample search data from Wikipedia provided with the repo.
-
-It is important to have Elastic Search running prior to running `rake db:seed`
-as it will also appropriately index the data in ES.
-
-```bash
-elasticsearch >/dev/null </dev/null &
-rake db:seed
-```
-
-[1]: http://tutorials.pluralsight.com/review/elasticsearch-with-ruby-on-rails
-
-License
--------
-
-This work is licensed under a Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License.
