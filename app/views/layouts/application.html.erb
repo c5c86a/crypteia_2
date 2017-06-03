@@ -13,3 +13,35 @@
     <%= yield %>
   </body>
 </html>
+<nav class="navbar navbar-inverse">
+  <div class="container">
+    <div class="navbar-header">
+      <%= link_to 'iCan', root_path, class: 'navbar-brand' %>
+    </div>
+    <div id="navbar">
+      <ul class="nav navbar-nav">
+      </ul>
+
+      <ul class="nav navbar-nav pull-right">
+        <li class="dropdown">
+          <a class="dropdown-toggle" aria-expanded="false" role="button" data-toggle="dropdown" href="#">
+            Role
+            <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu" role="menu">
+            <% User::ROLES.each do |k, v| %>
+              <li>
+                <%= link_to session_path(k), method: :patch do %>
+                  <%= v %>
+                  <% if v == current_user.role %>
+                    <small class="text-muted">(current)</small>
+                  <% end %>
+                <% end %>
+              </li>
+            <% end %>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

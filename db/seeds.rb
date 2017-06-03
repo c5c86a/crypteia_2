@@ -26,4 +26,5 @@ pages.each do |page|
   end
 
   Page.create( title: title.strip, body: body.strip )
+20.times {|i| Project.create!({title: "Project #{i + 1}"}) }
 end

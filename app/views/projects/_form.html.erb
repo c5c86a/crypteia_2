@@ -1,0 +1,13 @@
+<%= form_for @project do |f| %>
+  <div class="form-group">
+    <%= f.label :title %>
+    <%= f.text_field :title, class: 'form-control' %>
+  </div>
+
+  <%= f.submit 'Post', class: 'btn btn-primary' %>
+<% end %>
+<ul class="nav navbar-nav">
+  <% if can? :create, Project %>
+    <li><%= link_to 'Add Project', new_project_path %></li>
+  <% end %>
+</ul>

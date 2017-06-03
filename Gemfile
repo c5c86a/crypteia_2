@@ -1,16 +1,18 @@
 source 'https://rubygems.org'
 
 # Rails Framework
-gem 'rails', '4.2.0'
+gem 'rails', '>= 5.0.1'
 
 # Static Assets & Front End
 gem 'slim-rails'
+gem 'cancancan', '~> 1.10'
 gem 'uglifier', '>= 1.3.0'
 gem 'sass-rails', '~> 5.0'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'turbolinks'
 gem 'json'
+gem 'jquery-turbolinks'
 # Database & Storage
 gem 'sqlite3'
 # Full-text search
