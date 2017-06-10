@@ -11,4 +11,5 @@ config = {
     }
    }
 
+
 Elasticsearch::Persistence.client = Elasticsearch::Client.new(config)
