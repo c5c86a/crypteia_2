@@ -1,0 +1,50 @@
+<div class="container">
+  <p id="notice"><%= notice %></p>
+  <h1>THREAT RECORDS</h1>
+  <hr>
+  <% flash.each do |message_type, message| %>
+    <div class="alert alert-<%= message_type %> alert-dismissible" role="alert" style="padding-left:0!important;"><%= message %>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    </div>
+  <% end %>
+  <%= form_tag search_index_path, method: 'get' do %>
+    <%= label_tag :query %>
+    <%= text_field_tag :q, params[:q] %>
+    <%= submit_tag :search %>
+  <% end %>
+</div>
+<div class="container">
+  <div class="table-responsive">
+    <table class="table table-bordered table-stripped table-hover">
+      <thead>
+        <tr>
+          <th>Threat Record as a Key</th>
+          <th>Source(asn_reg)</th>
+          <th>Threat Record Indicator (TRI)</th>
+          <th>Risk</th>
+          <th>Country</th>
+          <th>ASN</th>
+        </tr>
+      </thead>
+      <tbody>
+        <%if @Search%>
+          <%= form_tag search_update_path, method: :put, html: { style: "display:inline;" } do  %>
+            <tr>
+              <td><%= text_field_tag :threat_id,@Search.threat_id,placeholder: "threat_id", class: "form-control"%>
+              </td>
+              <td><%= text_field_tag :asn_registry,@Search.asn_registry ,placeholder: "asn_registry", class: "form-control"%> </td>
+              <td><%= text_field_tag :threat_tri,@Search.threat_tri,placeholder: "threat_tri", class: "form-control"%> </td>
+              <td><%=text_field_tag :risk, @Search.risk,placeholder: "risk", class: "form-control"%> </td>
+              <td><%=text_field_tag :country, @Search.country,placeholder: "country", class: "form-control"%> </td>
+              <td><%= text_field_tag :asn ,@Search.asn,placeholder: "asn", class: "form-control"%> </td>
+              <td><%= hidden_field_tag :id ,@Search.id%> </td>
+              <td><%= submit_tag "Save",  class: "btn btn-success" %></td>
+              <td><%= link_to 'Delete' , search_path(@Search) , method: :delete, class: "btn btn-danger" %>
+              </td>
+            </tr>
+          <%end%>
+        <%end%>
+      </tbody>
+    </table>
+  </div>
+</div>

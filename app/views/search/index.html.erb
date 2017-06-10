@@ -1,0 +1,69 @@
+<div class="container">
+  <p id="notice"><%= notice %></p>
+  <h1>THREAT RECORDS</h1>
+  <%=link_to 'Settings' , edit_setting_path(Setting.first.id) %>
+  <hr>
+  <% flash.each do |message_type, message| %>
+    <div class="alert alert-<%= message_type %> alert-dismissible" role="alert" style="padding-left:0!important;"><%= message %>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    </div>
+  <% end %>
+  <%= form_tag search_index_path, method: 'get' do %>
+    <%= label_tag :query %>
+    <%= text_field_tag :q, params[:q] %>
+    <%= submit_tag :search %>
+  <% end %>
+  <!-- <%#= link_to admin_settings_path do %>
+    <i class="fa fa-cogs" aria-hidden="true"></i>
+  <%#end%> -->
+</div>
+<div class="container">
+  <div class="table-responsive">
+    <table class="table table-bordered table-stripped table-hover">
+      <thead>
+        <tr>
+          <th>Threat Record as a Key</th>
+          <th>Source(asn_reg)</th>
+          <th>Threat Record Indicator (TRI)</th>
+          <th>Risk</th>
+          <th>Country</th>
+          <th>ASN</th>
+        </tr>
+      </thead>
+      <tbody>
+        <%if @Search%>
+          <%@Search.each do |result|%>
+            <tr>
+              <%if Setting.first.index_v%>
+                <% if !result.threat_id.empty? %>
+                  <td><%= result.threat_id%> </td>
+                <%else%>
+                  <td><label>No Id Found</label> </td>
+                <%end%>
+              <%end%>
+              <%if Setting.first.asn_registry_v%>
+                <td><%= result.asn_registry%> </td>
+              <%end%>
+              <%# if result.threat_tri %>
+              <%if Setting.first.threat_tri_v%>
+                <td><%= number_to_percentage(result.threat_tri  * 100) unless result.threat_tri.nil?%> </td>
+              <%end%>
+              <%#end%>
+              <%if Setting.first.risk_v%>
+                <td><%= result.risk%> </td>
+              <%end%>
+              <%if Setting.first.country_v%>
+                <td><%= result.country%> </td>
+              <%end%>
+              <%if Setting.first.asn_v%>
+                <td><%= result.asn%> </td>
+              <%end%>
+              <td><%= link_to "Edit", edit_search_path(result), class: "btn btn-primary" %></td>
+              <%#= link_to 'Delete' , search_path(result) , method: :delete , class: "btn btn-danger" %>
+            </tr>
+          <%end%>
+        <%end%>
+      </tbody>
+    </table>
+  </div>
+</div>
