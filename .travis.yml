@@ -22,4 +22,4 @@ deploy:
 
 before_install:
 - openssl aes-256-cbc -K $encrypted_53679d5449eb_key -iv $encrypted_53679d5449eb_iv
-  -in secrets.yml.enc -out config/secrets.yml -d
+  -in config/secrets.yml.enc -out config/secrets.yml -d
