@@ -2,10 +2,11 @@
 [![codecov.io](https://codecov.io/github/nicosmaris/crypteia_2/coverage.svg?branch=master)](https://codecov.io/github/nicosmaris/crypteia_2?branch=master)
 [heroku](https://crypteia2.herokuapp.com/)
 
-# To setup locally
+# Environment variables
 
-Before starting, make sure that you have the local files mentioned at the bottom of the .gitignore file.
-To setup locally, the following instructions have worked at ubuntu 16.10:
+To setup locally, you need config/secrets.yml with URL and PEM for the remote elasticsearch.
+
+These variables are already setup at travis-ci and heroku.
 
 ## Install postgres
 
