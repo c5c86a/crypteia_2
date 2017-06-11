@@ -1,0 +1,21 @@
+{
+"size":0,
+
+    "aggs" : {
+"articles_over_time":{
+            "histogram" : {
+                "@timestamp" : "price",
+                "interval" : "hour"
+        }
+, "aggs":{
+"record_count":{
+"cardinality":{
+"field": "destination_ip"
+}
+
+}
+
+}
+}
+    }
+}
