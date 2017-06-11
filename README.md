@@ -19,6 +19,6 @@ rake db:migrate
 rails c  
 $>s = Setting.new  
 %>s.save  
-%>sexit
+%>exit
 
 rails s  
