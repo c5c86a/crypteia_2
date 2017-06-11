@@ -1,4 +1,8 @@
 language: ruby
+
+services:
+- postgres
+
 script:
 - bundle exec rake test
 after_success:
