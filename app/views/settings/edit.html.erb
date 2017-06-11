@@ -8,7 +8,7 @@
           <%=setting.fields_for :preferences  do |p|%>
             <li>
               <%=p.label :index_v%>
-              <%=p.check_box :index_v%>
+              <%=p.check_box :index_v , checked: @hash.index_v.to_bool %>
             </li>
             <li>
               <%=p.label :country_v%>
@@ -35,8 +35,8 @@
               <%=p.check_box :risk_v%>
             </li>
             <li>
-              <%=p.label :asn_v%>``
-             <%=p.check_box :asn_v%>
+              <%=p.label :asn_v%>
+              <%=p.check_box :asn_v%>
             </li>
             <li>
               <%=p.label :asn_registry_v%>

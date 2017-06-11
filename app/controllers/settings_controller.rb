@@ -10,11 +10,12 @@ class SettingsController < ApplicationController
 
   def edit
     @setting = Setting.find(params[:id])
+    @hash = Hashie::Mash.new @setting.preferences
   end
 
   def update
     @setting = Setting.find(params[:id])
-    byebug
+    #byebug
     if @setting.update_attributes(setting_params)
       flash[:success] = 'Updated Successfully'
       redirect_to root_path
