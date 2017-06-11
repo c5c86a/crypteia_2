@@ -36,6 +36,8 @@ gem 'bootstrap-sass'#, '~> 3.3.6'
 # gem 'capistrano-rails', group: :development
 gem "elasticsearch-persistence", require: 'elasticsearch/persistence/model'
 
+gem 'to_bool'
+
 
 gem 'elasticsearch-dsl'
 

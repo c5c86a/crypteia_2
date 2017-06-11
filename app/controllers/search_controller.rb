@@ -17,6 +17,8 @@ class SearchController < ApplicationController
       @Search = Search.search(query: { match: {country_code: params[:q]}}) unless params[:q].nil?
 
     end
+    @setting = Hashie::Mash.new Setting.first.preferences
+    @single = Setting.first
     #byebug
   end
 

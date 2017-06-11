@@ -10,10 +10,12 @@ class SettingsController < ApplicationController
 
   def edit
     @setting = Setting.find(params[:id])
+    @hash = Hashie::Mash.new @setting.preferences
   end
 
   def update
     @setting = Setting.find(params[:id])
+    #byebug
     if @setting.update_attributes(setting_params)
       flash[:success] = 'Updated Successfully'
       redirect_to root_path
@@ -27,7 +29,7 @@ class SettingsController < ApplicationController
   #settings_params
 
   def setting_params
-    params.require(:setting).permit(:index_v,:country_v,:country_code_v,:threat_tri_v,:host_v,:threat_id_v,:risk_v,:asn_v,:asn_registry_v)
+    params.require(:setting).permit(:index_v,:country_v,:country_code_v,:threat_tri_v,:host_v,:threat_id_v,:risk_v,:asn_v,:asn_registry_v,preferences:{})
   end
 
 
