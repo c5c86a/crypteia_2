@@ -1,5 +1,8 @@
 # README this file will be removed
+--------
 
+commands below works also on mac
+----------
 Clone  
 
 Usage:  
