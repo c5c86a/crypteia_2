@@ -17,4 +17,27 @@ class Search < ApplicationRecord
   attribute :risk , Float ,mapping: { fields: { risk: {type: 'float'}}}
   attribute :asn , String ,mapping: { fields: { asn: {type: 'string'}}}
   attribute :asn_registry , String ,mapping: { fields: { asn_registry: {type: 'string'}}}
+  attribute :category, String, mapping: { fields: { category: { type: 'string' } } }
+  attribute :category_description, String, mapping: { fields: { category_description: { type: 'string' } } }
+  attribute :city, String, mapping: { fields: { city: { type: 'string' } } }
+  attribute :confidence, Float, mapping: { fields: { confidence: { type: 'float' } } }
+  attribute :continent_code, String, mapping: { fields: { continent_code: { type: 'string' } } }
+  attribute :location, Float, mapping: { fields: { location: { type: 'float' } } }
+  attribute :logid, String, mapping: { fields: { logid: { type: 'string' } } }
+  attribute :message, String, mapping: { fields: { message: { type: 'string' } } }
+  attribute :source_ids, String, mapping: { fields: { source_ids: { type: 'string' } } }
+  attribute :threat_type, String, mapping: { fields: { threat_type: { type: 'string' } } }
+  attribute :type, String, mapping: { fields: { type: { type: 'string' } } }
+  attribute :type_description, String, mapping: { fields: { type_description: { type: 'string' } } }
+  attribute :global_filter_time, Float, mapping: { fields: { global_filter_time: { type: 'float' } } }
+  attribute :logstash_backend, String, mapping: { fields: { logstash_backend: { type: 'string' } } }
+  attribute :logstash_febe_latency_sec, String, mapping: { fields: { logstash_febe_latency_sec: { type: 'string' } } }
+  attribute :logstash_frontend, String, mapping: { fields: { logstash_frontend: { type: 'string' } } }
+  attribute :raw_message_bytesize, Integer, mapping: { fields: { raw_message_bytesize: { type: 'integer' } } }
+  attribute :vendor_filter_time, Float, mapping: { fields: { vendor_filter_time: { type: 'float' } } }
+  attribute :id, String, mapping: { fields: { id: { type: 'string' } } }
+  attribute :srcevent, String, mapping: { fields: { srcevent: { type: 'string' } } }
+  attribute :timestamp, Date, mapping: { fields: { timestamp: { type: 'date' } } }
+  attribute :vendor, String, mapping: { fields: { vendor: { type: 'string' } } }
+  attribute :version, Integer, mapping: { fields: { vendor: { type: 'integer' } } }
 end
