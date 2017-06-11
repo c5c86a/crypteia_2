@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170610073508) do
+ActiveRecord::Schema.define(version: 20170611093047) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 20170610073508) do
     t.boolean "risk_v", default: false
     t.boolean "asn_v", default: false
     t.boolean "asn_registry_v", default: false
+    t.text "preferences"
   end
 
 end
