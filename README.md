@@ -6,7 +6,7 @@
 
 To setup locally, you need config/secrets.yml with URL and PEM for the remote elasticsearch.
 
-These variables are already setup at travis-ci and heroku.
+These variables are already setup at travis-ci and heroku. Heroku has also the env var SECRET_KEY_BASE
 
 ## Install postgres
 
