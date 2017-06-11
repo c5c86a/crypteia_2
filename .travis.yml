@@ -3,16 +3,11 @@ language: ruby
 services:
 - postgres
 
-before_script:
+script:
   - psql -c 'create database ThreatDb_development;' -U postgres
-
-test:
-  adapter: postgresql
-  database: ThreatDb_development
-
-
-#script:
-#- bundle exec rake test
+  - bundle exec rake db:create:all
+  - bundle exec rake db:migrate
+  - bundle exec rake test
 
 after_success:
 - bash <(curl -s https://codecov.io/bash)
