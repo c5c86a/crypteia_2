@@ -57,7 +57,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: ThreatDb_test
+  database: ThreatDb_development
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -80,6 +80,4 @@ test:
 #
 production:
   <<: *default
-  database: ThreatDb_production
-  username: ThreatDb
-  password: <%= ENV['THREATDB_DATABASE_PASSWORD'] %>
+  database: ThreatDb_development
