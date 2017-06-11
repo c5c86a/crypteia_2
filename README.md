@@ -1,4 +1,11 @@
+[![Build Status](https://travis-ci.org/nicosmaris/crypteia_2.png?branch=master)](https://travis-ci.org/nicosmaris/crypteia_2)
+[![codecov.io](https://codecov.io/github/nicosmaris/crypteia_2/coverage.svg?branch=master)](https://codecov.io/github/nicosmaris/crypteia_2?branch=master)
+[heroku](https://crypteia2.herokuapp.com/)
+
 # To setup locally
+
+Before starting, make sure that you have the local files mentioned at the bottom of the .gitignore file.
+To setup locally, the following instructions have worked at ubuntu 16.10:
 
 ## Install postgres
 
