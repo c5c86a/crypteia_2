@@ -19,6 +19,7 @@ sudo -u postgres createuser `whoami` -s
 
 ## Setup DB
 
+
 bundle install  
 rake db:create  
 rake db:migrate  
