@@ -12,14 +12,13 @@ script:
 after_success:
 - bash <(curl -s https://codecov.io/bash)
 
-# TODO: replace sqlite with postgres
-#deploy:
-#  provider: heroku
-#  api_key:
-#    secure: fBPO5kw+ol0Cxc72FruQa9CfufA4OClByoQ3AkKT8gqZBD3uHoEPP7IY8A5Sjihg1ylRhyrTHdYnOhHQ5+dS28+Kt4vTa4JsBAinRFF5cV4ggmv3/EZVWrW/vbbpdLwdUgddZNSlULQGFFdZAIF5FujCQqosVmZUBAE1VNv4qz1Ie03zpVFhzQPkFSLGbzdm99uIsk1R69u16vZZaoCIK4qJgsJbSUdkm9ycevE6EWJeZPpaFFnR+P88+C854TCGifJLdo+NEhSbqIsQuKA7Ghe133hZ4dRsGQgqWo6HZisvkB8ZN5HnwZ+JLOYpiFtjPrS7eikYQHEhQ6Qp3az9bDpY9mVcArfm6+GIjBraryBgZixt+Vk19IqFug119ELwDBGZR7kr2fOdo+HQjTbr3fXbim+4BByTyIqFGvqQ3fVlD1pnjeSAqCtWmWsNnRIOJV9kXULX1iRsd+S9AmvrBJuFrzfhfIXWg5MbTEVzLZC7kWofJNYUqiV8c5gj8RFjipR29vLd7PhWogZy2DQXstXAvLgIJnp85nGpmw/AdV9nnLzAvwCZXD19tg1bVYA02G92E0t8O61/qCcO5vOrFVXJfFr9YKHeVy2ohtMOtNGWHk1YPfpn1+nhb09xlGWJjfC4fPuD1C7qZYiDHKBSEAhG+0Pa4Y2njZY3UEmkEsA=
-#  app: crypteia2
-#  on:
-#    all_branches: true
+deploy:
+  provider: heroku
+  api_key:
+    secure: fBPO5kw+ol0Cxc72FruQa9CfufA4OClByoQ3AkKT8gqZBD3uHoEPP7IY8A5Sjihg1ylRhyrTHdYnOhHQ5+dS28+Kt4vTa4JsBAinRFF5cV4ggmv3/EZVWrW/vbbpdLwdUgddZNSlULQGFFdZAIF5FujCQqosVmZUBAE1VNv4qz1Ie03zpVFhzQPkFSLGbzdm99uIsk1R69u16vZZaoCIK4qJgsJbSUdkm9ycevE6EWJeZPpaFFnR+P88+C854TCGifJLdo+NEhSbqIsQuKA7Ghe133hZ4dRsGQgqWo6HZisvkB8ZN5HnwZ+JLOYpiFtjPrS7eikYQHEhQ6Qp3az9bDpY9mVcArfm6+GIjBraryBgZixt+Vk19IqFug119ELwDBGZR7kr2fOdo+HQjTbr3fXbim+4BByTyIqFGvqQ3fVlD1pnjeSAqCtWmWsNnRIOJV9kXULX1iRsd+S9AmvrBJuFrzfhfIXWg5MbTEVzLZC7kWofJNYUqiV8c5gj8RFjipR29vLd7PhWogZy2DQXstXAvLgIJnp85nGpmw/AdV9nnLzAvwCZXD19tg1bVYA02G92E0t8O61/qCcO5vOrFVXJfFr9YKHeVy2ohtMOtNGWHk1YPfpn1+nhb09xlGWJjfC4fPuD1C7qZYiDHKBSEAhG+0Pa4Y2njZY3UEmkEsA=
+  app: crypteia2
+  on:
+    all_branches: true
 
 before_install:
 - openssl aes-256-cbc -K $encrypted_53679d5449eb_key -iv $encrypted_53679d5449eb_iv
