@@ -17,6 +17,7 @@ class Search < ApplicationRecord
   attribute :risk , Float ,mapping: { fields: { risk: {type: 'float'}}}
   attribute :asn , String ,mapping: { fields: { asn: {type: 'string'}}}
   attribute :asn_registry , String ,mapping: { fields: { asn_registry: {type: 'string'}}}
+  #from here
   attribute :category, String, mapping: { fields: { category: { type: 'string' } } }
   attribute :category_description, String, mapping: { fields: { category_description: { type: 'string' } } }
   attribute :city, String, mapping: { fields: { city: { type: 'string' } } }

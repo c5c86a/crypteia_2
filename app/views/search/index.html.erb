@@ -41,23 +41,21 @@
                   <td><label>No Id Found</label> </td>
                 <%end%>
               <%end%>
-              <%if @single.asn_registry_v%>
-                <td><%= result.asn_registry%> </td>
+              <% if @setting.asn_registry_v.to_bool %>
+                <td><%= result.asn_registry %> </td>
               <%end%>
-              <%# if result.threat_tri %>
-              <%if @single.threat_tri_v%>
+
                 <td><%= number_to_percentage(result.threat_tri  * 100) unless result.threat_tri.nil?%> </td>
-              <%end%>
-              <%#end%>
-              <%if @single.risk_v%>
+
+
                 <td><%= result.risk%> </td>
-              <%end%>
-              <%if @single.country_v%>
+
                 <td><%= result.country%> </td>
-              <%end%>
-              <%if @single.asn_v%>
+
                 <td><%= result.asn%> </td>
-              <%end%>
+              <% if @setting.confidence_v.to_bool%>
+                <td><%= result.confidence %> </td>
+                <%end%>
               <td><%= link_to "Edit", edit_search_path(result), class: "btn btn-primary" %></td>
               <%#= link_to 'Delete' , search_path(result) , method: :delete , class: "btn btn-danger" %>
             </tr>

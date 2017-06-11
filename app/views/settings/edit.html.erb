@@ -42,6 +42,10 @@
               <%=p.label :asn_registry_v%>
               <%=p.check_box :asn_registry_v%>
             </li>
+            <li>
+              <%=p.label :confidence_v%>
+              <%=p.check_box :confidence_v , checked: @hash.confidence_v.to_bool%>
+            </li>
           <%end%>
         </div>
         <%=setting.submit nil , class: "btn-success"%>
