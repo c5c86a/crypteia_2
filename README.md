@@ -4,7 +4,7 @@
 
 # Environment variables
 
-The file config/secrets.yml holds the URL and PEM for the remote elasticsearch.
+The file config/secrets.yml reads the environment variables SECRET_KEY_BASE , URL and PEM
 
 ## Install postgres
 
