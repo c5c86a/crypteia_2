@@ -1,7 +1,8 @@
-#require 'elasticsearch-persistence'
+require 'dotenv'
+Dotenv.load ".env"
+
 File.open('public/elasticsearch_cert.pem', 'w') { |file| file.write(Rails.application.secrets.PEM.gsub(/\\n/, "\n")) }
 url_key = Rails.application.secrets['URL']
-puts url_key
 
 config = {
   host: url_key,
@@ -10,6 +11,4 @@ config = {
      }
     }
    }
-
-
 Elasticsearch::Persistence.client = Elasticsearch::Client.new(config)
