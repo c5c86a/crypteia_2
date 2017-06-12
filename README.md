@@ -4,11 +4,7 @@
 
 # Environment variables
 
-The file config/secrets.yml is versioned as it just reads the environment variables SECRET_KEY_BASE , URL and PEM
-
-For the content of the pem file of the remote elasticsearch server we had to escape special characters of file (named for example 'x') for bash with the following command and replace each newline with \n\:
-
-sed -e "s/'/'\\\\''/g; 1s/^/'/; \$s/\$/'/" x
+The file config/secrets.yml is versioned as it just reads the environment variables SECRET_KEY_BASE , URL and PEM which are already set up at travis and heroku. To setup locally, ask us to provide you the file .env
 
 ## Install postgres
 
@@ -33,3 +29,4 @@ $>s = Setting.new
 %>exit
 
 rails s  
+
