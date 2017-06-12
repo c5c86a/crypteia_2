@@ -6,7 +6,7 @@
 
 The file config/secrets.yml is versioned as it just reads the environment variables SECRET_KEY_BASE , URL and PEM
 
-For the content of the pem file of the remote elasticsearch server we had to escape special characters of file (named for example 'x') for bash with the following command:
+For the content of the pem file of the remote elasticsearch server we had to escape special characters of file (named for example 'x') for bash with the following command and replace each newline with \n\:
 
 sed -e "s/'/'\\\\''/g; 1s/^/'/; \$s/\$/'/" x
 
