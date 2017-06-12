@@ -1,5 +1,5 @@
 #require 'elasticsearch-persistence'
-File.open('public/elasticsearch_cert.pem', 'w') { |file| file.write(Rails.application.secrets.PEM.gsub(/\n/, "\n")) }
+File.open('public/elasticsearch_cert.pem', 'w') { |file| file.write(Rails.application.secrets.PEM.gsub(/\\n/, "\n")) }
 url_key = Rails.application.secrets['URL']
 puts url_key
 
