@@ -4,9 +4,7 @@
 
 # Environment variables
 
-To setup locally, you need config/secrets.yml with URL and PEM for the remote elasticsearch.
-
-These variables are already setup at travis-ci and heroku. Heroku has also the env var SECRET_KEY_BASE
+The file config/secrets.yml is versioned as it just reads the environment variables SECRET_KEY_BASE , URL and PEM which are already set up at travis and heroku. To setup locally, ask us to provide you the file .env
 
 ## Install postgres
 
@@ -31,3 +29,4 @@ $>s = Setting.new
 %>exit
 
 rails s  
+
