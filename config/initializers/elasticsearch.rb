@@ -1,5 +1,7 @@
-require 'dotenv'
-Dotenv.load ".env"
+if Rails.application.secrets.PEM.nil?
+  require 'dotenv'
+  Dotenv.load ".env"
+end
 
 File.open('public/elasticsearch_cert.pem', 'w') { |file| file.write(Rails.application.secrets.PEM.gsub(/\\n/, "\n")) }
 url_key = Rails.application.secrets['URL']

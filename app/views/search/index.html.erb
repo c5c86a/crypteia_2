@@ -41,23 +41,80 @@
                   <td><label>No Id Found</label> </td>
                 <%end%>
               <%end%>
-              <%if @single.asn_registry_v%>
-                <td><%= result.asn_registry%> </td>
+              <% if @setting.asn_registry_v.to_bool %>
+                <td><%= result.asn_registry %> </td>
               <%end%>
-              <%# if result.threat_tri %>
-              <%if @single.threat_tri_v%>
-                <td><%= number_to_percentage(result.threat_tri  * 100) unless result.threat_tri.nil?%> </td>
-              <%end%>
-              <%#end%>
-              <%if @single.risk_v%>
+
+                <!--<td><%= number_to_percentage(result.threat_tri  * 100) unless result.threat_tri.nil?%> </td>-->
+
+    <% if @setting.risk_v.to_bool %>
                 <td><%= result.risk%> </td>
-              <%end%>
-              <%if @single.country_v%>
+  <%end%>
+  <% if @setting.country_v.to_bool %>
                 <td><%= result.country%> </td>
-              <%end%>
-              <%if @single.asn_v%>
+  <%end%>
+    <% if @setting.asn_v.to_bool %>
                 <td><%= result.asn%> </td>
-              <%end%>
+          <%end%>
+              <% if @setting.confidence_v.to_bool%>
+                <td><%= result.confidence %> </td>
+                <%end%>
+
+                <% if @setting.continent_code_v.to_bool%>
+                  <td><%= result.continent_code %> </td>
+                  <%end%>
+                  <% if @setting.location_v.to_bool%>
+                    <td><%= result.location %> </td>
+                    <%end%>
+                    <% if @setting.logid_v.to_bool%>
+                      <td><%= result.logid %> </td>
+                      <%end%>
+                      <% if @setting.message_v.to_bool%>
+                        <td><%= result.message %> </td>
+                        <%end%>
+
+                        <% if @setting.source_ids_v.to_bool%>
+                          <td><%= result.source_ids %> </td>
+                          <%end%>
+                          <% if @setting.threat_type_v.to_bool%>
+                            <td><%= result.threat_type %> </td>
+                            <%end%>
+                            <% if @setting.type_v.to_bool%>
+                              <td><%= result.type %> </td>
+                              <%end%>
+                              <% if @setting.type_description_v.to_bool%>
+                                <td><%= result.type_description %> </td>
+                                <%end%>
+
+                                <% if @setting.lgstash_backend_v.to_bool%>
+                                  <td><%= result.lgstash_backend %> </td>
+                                  <%end%>
+                                  <% if @setting.logstash_febe_latency_sec_v.to_bool%>
+                                        <td><%= result.logstash_febe_latency_sec %> </td>
+                                        <%end%>
+
+                                        <% if @setting.logstash_frontend_v.to_bool%>
+                                              <td><%= result.logstash_frontend %> </td>
+                                              <%end%>
+
+                                              <% if @setting.vendor_filter_time_v.to_bool%>
+                                                    <td><%= result.vendor_filter_time %> </td>
+                                                    <%end%>
+
+                                                    <% if @setting.id_v.to_bool%>
+                                                            <td><%= result.id %> </td>
+                                                            <%end%>
+
+                                                            <% if @setting.id_v.to_bool%>
+                                                                    <td><%= result.id %> </td>
+                                                                    <%end%>
+
+                                                                    <% if @setting.timestamp_v.to_bool%>
+                                                                            <td><%= result.timestamp %> </td>
+                                                                            <%end%>
+                                                                            <% if @setting.version_v.to_bool%>
+                                                                                    <td><%= result.version_v %> </td>
+                                                                                    <%end%>
               <td><%= link_to "Edit", edit_search_path(result), class: "btn btn-primary" %></td>
               <%#= link_to 'Delete' , search_path(result) , method: :delete , class: "btn btn-danger" %>
             </tr>

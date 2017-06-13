@@ -29,7 +29,11 @@ class SettingsController < ApplicationController
   #settings_params
 
   def setting_params
-    params.require(:setting).permit(:index_v,:country_v,:country_code_v,:threat_tri_v,:host_v,:threat_id_v,:risk_v,:asn_v,:asn_registry_v,preferences:{})
+    params.require(:setting).permit(:index_v,:country_v,:country_code_v,:threat_tri_v,
+    :host_v,:threat_id_v,:risk_v,:asn_v,:asn_registry_v,:confidence_v,:continent_code_v,:location_v,:logid_v,
+    :message_v,:source_ids_v,:threat_type_v,:type_v,:type_description_v,:global_filter_time_v,:logstash_backend_v,
+    :logstash_febe_latency_sec_v,:logstash_frontend_v,:raw_message_bytesize_v,:vendor_filter_time_v,:id_v,
+    :srcevent_v,:timestamp_v,:vendor_v,:version_v,preferences:{})
   end
 
 
