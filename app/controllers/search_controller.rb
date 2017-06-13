@@ -35,7 +35,7 @@ class SearchController < ApplicationController
       risk: params[:risk].to_f,
       country:  params[:country],
       asn:  params[:asn],
-      
+
 
           confidence:  params[:confidence],
             continent_code:  params[:continent_code],
@@ -46,7 +46,7 @@ class SearchController < ApplicationController
                     threat_type:  params[:threat_type],
                       type:  params[:continent_code],
                         type_description:  params[:type_description],
-                          logid:  params[:logid],
+                          
                             global_filter_time:  params[:global_filter_time],
                               logstash_backend:  params[:logstash_backend],
                               logstash_febe_latency_sec:  params[:logstash_febe_latency_sec],
