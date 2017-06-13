@@ -46,6 +46,74 @@
               <%=p.label :confidence_v%>
               <%=p.check_box :confidence_v , checked: @hash.confidence_v.to_bool%>
             </li>
+            <li>
+              <%=p.label :continent_code_v%>
+              <%=p.check_box :continent_code_v , checked: @hash.continent_code_v.to_bool%>
+            </li>
+            <li>
+              <%=p.label :location_v%>
+              <%=p.check_box :location_v , checked: @hash.location_v.to_bool%>
+            </li>
+            <li>
+              <%=p.label :logid_v%>
+              <%=p.check_box :logid_v , checked: @hash.logid_v.to_bool%>
+            </li>
+            <li>
+              <%=p.label :message_v%>
+              <%=p.check_box :message_v , checked: @hash.message.to_bool%>
+            </li>
+            <li>
+              <%=p.label :source_ids_v%>
+              <%=p.check_box :source_ids_v , checked: @hash.source_ids_v.to_bool%>
+            </li>  <li>
+                <%=p.label :threat_type_v%>
+                <%=p.check_box :threat_type_v , checked: @hash.threat_type_v.to_bool%>
+              </li>
+              <li>
+                  <%=p.label :type_v%>
+                  <%=p.check_box :type_v , checked: @hash.type_v.to_bool%>
+                </li>
+                <li>
+                    <%=p.label :type_description_v%>
+                    <%=p.check_box :type_description_v , checked: @hash.type_description_v.to_bool%>
+                  </li>
+                  <li>
+                      <%=p.label :global_filter_time_v%>
+                      <%=p.check_box :global_filter_time_v , checked: @hash.global_filter_time_v.to_bool%>
+                    </li>
+                    <li>
+                        <%=p.label :lgstash_backend_v%>
+                        <%=p.check_box :logstash_backend_v , checked: @hash.logstash_backend_v.to_bool%>
+                      </li>
+                      <li>
+                          <%=p.label :logstash_febe_latency_sec_v%>
+                          <%=p.check_box :logstash_febe_latency_sec_v , checked: @hash.logstash_febe_latency_sec_v.to_bool%>
+                        </li>
+                        <li>
+                            <%=p.label :logstash_frontend_v%>
+                            <%=p.check_box :logstash_frontend_v , checked: @hash.logstash_frontend_v.to_bool%>
+                          </li>
+                          <li>
+                              <%=p.label :vendor_filter_time_v%>
+                              <%=p.check_box :vendor_filter_time_v , checked: @hash.vendor_filter_time_v.to_bool%>
+                            </li>
+                            <li>
+                                <%=p.label :id_v%>
+                                <%=p.check_box :id_v , checked: @hash.id_v.to_bool%>
+                              </li>
+
+                                <li>
+                                    <%=p.label :srcevent_v%>
+                                    <%=p.check_box :srcevent_v , checked: @hash.srcevent_v.to_bool%>
+                                  </li>
+                                  <li>
+                                      <%=p.label :timestamp_v%>
+                                      <%=p.check_box :timestamp_v , checked: @hash.timestamp_v.to_bool%>
+                                    </li>
+                                    <li>
+                                        <%=p.label :version_v%>
+                                        <%=p.check_box :version_v , checked: @hash.version_v.to_bool%>
+                                      </li>
           <%end%>
         </div>
         <%=setting.submit nil , class: "btn-success"%>
