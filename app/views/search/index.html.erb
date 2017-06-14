@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container  col-xs-12">
   <p id="notice"><%= notice %></p>
   <h1>THREAT RECORDS</h1>
   <%=link_to 'Settings' , edit_setting_path(@single.id) %>
@@ -8,6 +8,7 @@
     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
   </div>
   <% end %>
+
   <%= form_tag search_index_path, method: 'get' do %>
   <%= label_tag :query %>
   <%= text_field_tag :q, params[:q] %>
@@ -17,17 +18,127 @@
   <i class="fa fa-cogs" aria-hidden="true"></i>
   <%#end%> -->
 </div>
-<div class="container">
+<hr><br>
+<div class="container col-xs-12">
   <div class="table-responsive">
-    <table class="table table-bordered table-stripped table-hover">
-      <thead>
+    <table class="table table-bordered table-stripped table-hover ">
+      <thead class="thead-inverse">
         <tr>
+
+
           <th>Threat Record as a Key</th>
+
+          <% if @setting.source_ids_v.to_bool %>
           <th>Source(asn_reg)</th>
+          <%end%>
+
+          <% if @setting.threat_tri_v.to_bool %>
           <th>Threat Record Indicator (TRI)</th>
+          <%end%>
+          <!--<th>Risk</th>-->
+          <% if @setting.risk_v.to_bool %>
           <th>Risk</th>
+          <%end%>
+          <% if @setting.country_v.to_bool %>
           <th>Country</th>
+          <%end%>
+          <% if @setting.asn_v.to_bool %>
           <th>ASN</th>
+          <%end%>
+          <% if @setting.asn_registry_v.to_bool %>
+          <th>ASN Registry</th>
+          <%end%>
+
+          <% if @setting.category_v.to_bool %>
+          <th>Category</th>
+          <%end%>
+
+          <% if @setting.category_description_v.to_bool %>
+          <th>Category Description</th>
+          <%end%>
+
+          <% if @setting.city_v.to_bool %>
+          <th>City</th>
+          <%end%>
+
+          <% if @setting.confidence_v.to_bool %>
+          <th>Confidence</th>
+          <%end%>
+
+          <% if @setting.continent_code_v.to_bool %>
+          <th>Continet Code</th>
+          <%end%>
+
+          <% if @setting.location_v.to_bool %>
+          <th>Location</th>
+          <%end%>
+
+          <% if @setting.logid_v.to_bool %>
+          <th>Logid Id</th>
+          <%end%>
+
+          <% if @setting.message_v.to_bool %>
+          <th>Message</th>
+          <%end%>
+
+          <% if @setting.source_ids_v.to_bool %>
+          <th>Source Ids</th>
+          <%end%>
+
+          <% if @setting.threat_type_v.to_bool %>
+          <th>Threat type</th>
+          <%end%>
+
+          <% if @setting.type_v.to_bool %>
+          <th>Type</th>
+          <%end%>
+
+          <% if @setting.type_description_v.to_bool %>
+          <th>Type Description</th>
+          <%end%>
+
+          <% if @setting.global_filter_time_v.to_bool %>
+          <<th>Global Filter Time</th>
+          <%end%>
+
+          <% if @setting.logstash_backend_v.to_bool %>
+          <th>Logstash Backend</th>
+          <%end%>
+
+          <% if @setting.logstash_febe_latency_sec_v.to_bool %>
+          <th>Logstash Febe Latency Sec</th>
+          <%end%>
+
+          <% if @setting.logstash_frontend_v.to_bool %>
+          <th>Logstash Frontend</th>
+          <%end%>
+
+          <% if @setting.raw_message_bytesize_v.to_bool %>
+          <th>Raw Message Bytesize</th>
+          <%end%>
+
+          <% if @setting.vendor_filter_time_v.to_bool %>
+          <th>Vendor Filtertime</th>
+          <%end%>
+
+          <% if @setting.id_v.to_bool %>
+          <th>Id</th>
+          <%end%>
+          <% if @setting.srcevent_v.to_bool %>
+          <th>Sr Cevent</th>
+          <%end%>
+
+          <% if @setting.timestamp_v.to_bool %>
+          <th>Time Stamp</th>
+          <%end%>
+
+          <% if @setting.vendor_v.to_bool %>
+          <th>Vendor</th>
+          <%end%>
+
+          <% if @setting.version_v.to_bool %>
+          <th>Version</th>
+          <%end%>
         </tr>
       </thead>
       <tbody>
@@ -35,18 +146,18 @@
         <%@Search.each do |result|%>
         <tr>
           <%if @setting.index_v.to_bool%>
+
           <% if !result.threat_id.empty? %>
           <td><%= result.threat_id%> </td>
           <%else%>
           <td><label>No Id Found</label> </td>
           <%end%>
+
           <%end%>
+
           <% if @setting.asn_registry_v.to_bool %>
           <td><%= result.asn_registry %> </td>
           <%end%>
-
-          <!--<td><%= number_to_percentage(result.threat_tri  * 100) unless result.threat_tri.nil?%> </td>-->
-
           <% if @setting.risk_v.to_bool %>
           <td><%= result.risk%> </td>
           <%end%>
@@ -56,6 +167,13 @@
           <% if @setting.asn_v.to_bool %>
           <td><%= result.asn%> </td>
           <%end%>
+
+          <td><%= number_to_percentage(result.threat_tri  * 100) unless result.threat_tri.nil?%> </td>
+
+
+
+
+
           <% if @setting.confidence_v.to_bool%>
           <td><%= result.confidence %> </td>
           <%end%>
