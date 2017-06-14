@@ -18,15 +18,15 @@
   <i class="fa fa-cogs" aria-hidden="true"></i>
   <%#end%> -->
 </div>
-<hr><br>
+
 <div class="container col-xs-12">
   <div class="table-responsive">
     <table class="table table-bordered table-stripped table-hover ">
       <thead class="thead-inverse">
         <tr>
+<th>IP</th>
 
-
-          <th>Threat Record as a Key</th>
+        <!--  <th>Threat Record as a Key</th>--
 
           <% if @setting.source_ids_v.to_bool %>
           <th>Source(asn_reg)</th>
@@ -36,6 +36,7 @@
           <th>Threat Record Indicator (TRI)</th>
           <%end%>
           <!--<th>Risk</th>-->
+
           <% if @setting.risk_v.to_bool %>
           <th>Risk</th>
           <%end%>
@@ -168,7 +169,9 @@
           <td><%= result.asn%> </td>
           <%end%>
 
-          <td><%= number_to_percentage(result.threat_tri  * 100) unless result.threat_tri.nil?%> </td>
+
+
+<!--          <td><%= number_to_percentage(result.threat_tri  * 100) unless result.threat_tri.nil?%> </td>-->
 
 
 
@@ -233,6 +236,8 @@
           <% if @setting.version_v.to_bool%>
           <td><%= result.version_v %> </td>
           <%end%>
+
+
           <td><%= link_to "Edit", edit_search_path(result), class: "btn btn-primary" %></td>
           <%#= link_to 'Delete' , search_path(result) , method: :delete , class: "btn btn-danger" %>
         </tr>
