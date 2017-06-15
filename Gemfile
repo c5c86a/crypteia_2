@@ -38,7 +38,6 @@ gem "elasticsearch-persistence", require: 'elasticsearch/persistence/model'
 
 gem 'to_bool'
 
-
 gem 'elasticsearch-dsl'
 
 group :development, :test do
