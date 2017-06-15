@@ -38,6 +38,9 @@ gem "elasticsearch-persistence", require: 'elasticsearch/persistence/model'
 
 gem 'to_bool'
 
+gem 'dcjs-rails'
+gem 'd3-rails'
+gem 'crossfilter-rails'
 
 gem 'elasticsearch-dsl'
 

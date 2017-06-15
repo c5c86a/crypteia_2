@@ -14,3 +14,8 @@
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
+
+
+//= require d3
+//= require crossfilter
+//= require dc
