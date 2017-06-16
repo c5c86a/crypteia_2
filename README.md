@@ -2,6 +2,7 @@
 [![codecov.io](https://codecov.io/github/nicosmaris/crypteia_2/coverage.svg?branch=master)](https://codecov.io/github/nicosmaris/crypteia_2?branch=master)
 [heroku](https://crypteia2.herokuapp.com/)
 
+
 # Environment variables
 
 The file config/secrets.yml is versioned as it just reads the environment variables SECRET_KEY_BASE , URL and PEM which are already set up at travis and heroku. To setup locally, ask us to provide you the file .env
