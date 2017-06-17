@@ -39,6 +39,7 @@ gem "elasticsearch-persistence", require: 'elasticsearch/persistence/model'
 gem 'to_bool'
 gem 'elasticsearch-dsl'
 
+
 group :development, :test do
   gem 'rspec-rails', '~> 3.6.0'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

@@ -3,7 +3,7 @@ class Search < ApplicationRecord
   include Elasticsearch::Persistence::Model
   #include Elasticsearch::Model::Callbacks
   include Elasticsearch::DSL
-  index_name 'threatdb_2017.06.10'
+  index_name 'threatdb_2017.06.17'
   document_type ''
 
 
