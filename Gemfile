@@ -38,7 +38,7 @@ gem "elasticsearch-persistence", require: 'elasticsearch/persistence/model'
 
 gem 'to_bool'
 gem 'elasticsearch-dsl'
-
+gem 'devise', '~> 4.3'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.6.0'
