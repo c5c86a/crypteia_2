@@ -1,4 +1,5 @@
 class SearchController < ApplicationController
+ 
   require 'elasticsearch/persistence/model'
   require 'elasticsearch/dsl'
 

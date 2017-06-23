@@ -1,0 +1,19 @@
+* {
+/*  margin: 25px;*/
+}
+h3 {
+	color: grey;
+}
+text.pie-slice {
+	color: white;
+}
+#test1 {
+/*	margin-top: -460px;
+margin-left: 461px;*/
+}
+g.pie-slice._1 path, g.pie-slice._3 path, g.pie-slice._5 path, g.pie-slice._7 path, g.pie-slice._9 path {
+    fill: #CCCCCC;
+    }
+  g.pie-slice._0 path, g.pie-slice._2 path,  g.pie-slice._4 path, g.pie-slice._6 path, g.pie-slice._8 path{
+  	fill:#B9D1EC;
+  }

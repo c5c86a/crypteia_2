@@ -1,5 +1,5 @@
 class SettingsController < ApplicationController
-
+before_action :require_admin
   def new
 
   end
@@ -36,5 +36,12 @@ class SettingsController < ApplicationController
     :srcevent_v,:timestamp_v,:vendor_v,:version_v,preferences:{})
   end
 
+
+def require_admin
+ unless current_user.is_admin
+      flash[:error] = "You must be an administrator in to access this section"
+      redirect_to root_path
+ end
+end
 
 end

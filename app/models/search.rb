@@ -4,6 +4,7 @@ class Search < ApplicationRecord
   #include Elasticsearch::Model::Callbacks
   include Elasticsearch::DSL
   index_name 'threatdb_2017.06.23'
+
   document_type ''
 
 
