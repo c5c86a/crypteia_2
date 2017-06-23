@@ -40,7 +40,7 @@ class SearchController < ApplicationController
 
     confidence:  params[:confidence],
     continent_code:  params[:continent_code],
-    location:  params[:location],
+    location:  params[:location].to_f,
     logid:  params[:logid],
     message:  params[:message],
     source_ids:  params[:source_ids],
