@@ -1,5 +1,5 @@
 class SearchController < ApplicationController
- 
+ before_action :require_admin ,only: [:edit,:update,:destroy]
   require 'elasticsearch/persistence/model'
   require 'elasticsearch/dsl'
 
@@ -77,6 +77,14 @@ class SearchController < ApplicationController
     end
     redirect_to search_index_path
 
+  end
+  private
+
+  def require_admin
+   unless current_user.is_admin
+        flash[:error] = "You must be an administrator in to access this section"
+        redirect_to root_path
+   end
   end
 
 end
