@@ -12,7 +12,7 @@
     <%= form_tag search_index_path, method: 'get' do %>
       <%= label_tag :query %>
       <%= text_field_tag :q, params[:q] %>
-      <%=select_tag :country%>
+      <%#=select_tag :country , options_for_select(["eth"],"Ethiopia")%>
       <%= submit_tag :search %>
     <% end %>
   </div>
