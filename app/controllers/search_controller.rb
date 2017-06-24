@@ -81,9 +81,14 @@ class SearchController < ApplicationController
   private
 
   def require_admin
-   unless current_user.is_admin
+   if current_user
+   unless current_user.is_admin && current_user.logged_in?
         flash[:error] = "You must be an administrator in to access this section"
         redirect_to root_path
+   end
+  else
+    flash[:error] = "You must be an logged in to access this section"
+    redirect_to root_path
    end
   end
 
