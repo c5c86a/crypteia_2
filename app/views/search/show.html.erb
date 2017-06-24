@@ -1,0 +1,26 @@
+<div class="container">
+  <%if @Search%>
+    <%= form_tag search_update_path, method: :put, html: { style: "display:inline;" } do  %>
+      <div class = "row">
+        <div class="col-md-6">
+          <%= @Search.threat_tri%>
+        </div>
+      </div>
+      <div class = "row">
+        <div class="col-md-6">
+          <%= @Search.source_ids%>
+        </div>
+      </div>
+      <div class = "row">
+        <div class="col-md-6">
+          <%= @Search.risk%>
+        </div>
+      </div>
+      <div class = "row">
+        <div class="col-md-6">
+          <%= @Search.country%>
+        </div>
+      </div>
+    <%end%>
+  <%end%>
+</div>

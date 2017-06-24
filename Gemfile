@@ -42,6 +42,12 @@ gem 'to_bool'
 gem 'elasticsearch-dsl'
 gem 'devise', '~> 4.3'
 
+gem 'highcharts'
+gem 'countries'
+gem 'faker'
+gem 'groupdate'
+gem 'chartkick'
+gem 'searchkick'
 group :development, :test do
   gem 'rspec-rails', '~> 3.6.0'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

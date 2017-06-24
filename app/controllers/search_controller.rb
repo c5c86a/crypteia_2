@@ -12,14 +12,16 @@ class SearchController < ApplicationController
     #Search.connection
     #@Search = Search.search(query: { match: {country_code: params[:q]}}) unless params[:q].nil?
     if !params[:q]
-      @Search = Search.search(query: { match: {country_code: 'eth'}})# unless params[:q].nil?
+      @Search = Search.all( size:50)# unless params[:q].nil?
     else
-      @Search = Search.search(query: { match: {country_code: params[:q]}}) unless params[:q].nil?
-
+      @Search = Search.search(query: { match: {threat_id: params[:q]}},size:50) unless params[:q].nil?
     end
-
+    #byebug
     @setting = Hashie::Mash.new Setting.first.preferences
     @single = Setting.first
+  end
+  def show
+   @Search  = Search.search(query:{match: {_id: params[:id]}}).first
   end
 
   def edit
@@ -36,8 +38,6 @@ class SearchController < ApplicationController
     risk: params[:risk].to_f,
     country:  params[:country],
     asn:  params[:asn],
-
-
     confidence:  params[:confidence],
     continent_code:  params[:continent_code],
     location:  params[:location].to_f,
@@ -47,7 +47,6 @@ class SearchController < ApplicationController
     threat_type:  params[:threat_type],
     type:  params[:continent_code],
     type_description:  params[:type_description],
-
     global_filter_time:  params[:global_filter_time],
     logstash_backend:  params[:logstash_backend],
     logstash_febe_latency_sec:  params[:logstash_febe_latency_sec],
@@ -70,19 +69,16 @@ class SearchController < ApplicationController
       @s = Search.search(query:{match: {_id: params[:id]}}).first
       @s.destroy
       flash[:success] = 'Record successfully deleted!'  if @s.destroyed?
-
-
     rescue
-
     end
     redirect_to search_index_path
-
   end
+
   private
 
   def require_admin
    if current_user
-   unless current_user.is_admin && current_user.logged_in?
+   unless current_user.is_admin
         flash[:error] = "You must be an administrator in to access this section"
         redirect_to root_path
    end

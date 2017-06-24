@@ -1,21 +1,27 @@
 {
-"size":0,
-
-    "aggs" : {
-"articles_over_time":{
-            "histogram" : {
-                "@timestamp" : "price",
-                "interval" : "hour"
+  size: 0,
+  aggs: {
+    articles_over_time: {
+      histogram: {
+        @timestamp: price,
+        interval: hour
+      },
+      aggs: {
+        record_count: {
+          cardinality: {
+            field: destination_ip
+          }
         }
-, "aggs":{
-"record_count":{
-"cardinality":{
-"field": "destination_ip"
-}
-
-}
-
-}
-}
+      }
     }
+  }
 }
+
+aggs : {
+        products : {
+            terms : {
+                field : ,
+                size : 5
+            }
+        }
+    }
