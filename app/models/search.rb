@@ -1,13 +1,18 @@
+require 'elasticsearch/model'
+
 class Search < ApplicationRecord
   #require 'elasticsearch-persistence'
   include Elasticsearch::Persistence::Model
   #include Elasticsearch::Model::Callbacks
   include Elasticsearch::DSL
-  index_name 'threatdb_2017.06.23'
 
+
+  def self.indexes
+    return Elasticsearch::Persistence.client.cat.indices(h: 'index', format: 'json', index: 'threatdb*', s: 'index').map {|x| x['index']}.sort.reverse!
+  end
+
+  index_name  indexes.first
   document_type ''
-
-
 
   attribute :index , String , mapping: { fields: { index: {type: 'string'}}}
   attribute :country , String , mapping: { fields: { country: {type: 'string'}}}
