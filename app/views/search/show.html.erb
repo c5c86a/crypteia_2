@@ -1,26 +1,84 @@
 <div class="container">
-  <%if @Search%>
-    <%= form_tag search_update_path, method: :put, html: { style: "display:inline;" } do  %>
-      <div class = "row">
-        <div class="col-md-6">
-          <%= @Search.threat_tri%>
-        </div>
-      </div>
-      <div class = "row">
-        <div class="col-md-6">
-          <%= @Search.source_ids%>
-        </div>
-      </div>
-      <div class = "row">
-        <div class="col-md-6">
-          <%= @Search.risk%>
-        </div>
-      </div>
-      <div class = "row">
-        <div class="col-md-6">
-          <%= @Search.country%>
-        </div>
-      </div>
-    <%end%>
-  <%end%>
+  <div class="col-md-4">
+    <ul class="list-group">
+      <%if @Search%>
+        <%if @setting.index_v.to_bool%>
+          <% if !@Search.threat_id.empty? %>
+            <li class="list-group-item"><%=@Search.threat_id%></li>
+          <%else%>
+            <label>No Id Found</label>
+          <%end%>
+        <%end%>
+        <% if @setting.asn_registry_v.to_bool %>
+          <li class="list-group-item"><%= @Search.asn_registry %></li>
+        <%end%>
+        <% if @setting.risk_v.to_bool %>
+          <li class="list-group-item"><%= @Search.risk%></li>
+        <%end%>
+        <% if @setting.country_v.to_bool %>
+          <li class="list-group-item"><%= @Search.country%></li>
+        <%end%>
+        <% if @setting.asn_v.to_bool %>
+          <li class="list-group-item"><%= @Search.asn%></li>
+        <%end%>
+        <% if @setting.confidence_v.to_bool%>
+          <li class="list-group-item"><%= @Search.confidence %></li>
+        <%end%>
+        <% if @setting.continent_code_v.to_bool%>
+          <li class="list-group-item"><%= @Search.continent_code %></li>
+        <%end%>
+        <% if @setting.location_v.to_bool%>
+          <li class="list-group-item"><%= @Search.location %></li>
+        <%end%>
+        <% if @setting.logid_v.to_bool%>
+          <li class="list-group-item"><%= @Search.logid %></li>
+        <%end%>
+        <% if @setting.message_v.to_bool%>
+          <li class="list-group-item"><%= @Search.message %></li>
+        <%end%>
+        <% if @setting.source_ids_v.to_bool%>
+          <li class="list-group-item"><%= @Search.source_ids %></li>
+        <%end%>
+        <% if @setting.threat_type_v.to_bool%>
+          <li class="list-group-item"><%= @Search.threat_type %></li>
+        <%end%>
+        <% if @setting.type_v.to_bool%>
+          <li class="list-group-item"><%= @Search.type %></li>
+        <%end%>
+        <% if @setting.type_description_v.to_bool%>
+          <li class="list-group-item"><%= @Search.type_description %></li>
+        <%end%>
+        <% if @setting.lgstash_backend_v.to_bool%>
+          <li class="list-group-item"><%= @Search.lgstash_backend %></li>
+        <%end%>
+        <% if @setting.logstash_febe_latency_sec_v.to_bool%>
+          <li class="list-group-item"><%= @Search.logstash_febe_latency_sec %></li>
+        <%end%>
+        <% if @setting.logstash_frontend_v.to_bool%>
+          <li class="list-group-item"><%= @Search.logstash_frontend %></li>
+        <%end%>
+        <% if @setting.vendor_filter_time_v.to_bool%>
+          <li class="list-group-item"><%= @Search.vendor_filter_time %></li>
+        <%end%>
+        <% if @setting.id_v.to_bool%>
+          <li class="list-group-item"><%= @Search.id %></li>
+        <%end%>
+        <% if @setting.id_v.to_bool%>
+          <li class="list-group-item"><%= @Search.id %></li>
+        <%end%>
+        <% if @setting.timestamp_v.to_bool%>
+          <li class="list-group-item"><%= @Search.timestamp %></li>
+        <%end%>
+        <% if @setting.version_v.to_bool%>
+          <li class="list-group-item"><%= @Search.version_v %></li>
+        <%end%>
+        <%if current_user && current_user.is_admin %>
+          <li class="list-group-item"><%= link_to "Edit", edit_search_path(@Search), class: "btn btn-primary" %></li>
+        <%end%>
+      <%end%>
+    </ul>
+  </div>
+  <div class="col-md-8">
+    <%= line_chart record_graph(@threat_history)%>
+  </div>
 </div>

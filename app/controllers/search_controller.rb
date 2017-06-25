@@ -11,11 +11,15 @@ class SearchController < ApplicationController
   def index
     #Search.connection
     #@Search = Search.search(query: { match: {country_code: params[:q]}}) unless params[:q].nil?
-    if !params[:q]
-      @Search = Search.all(size:50)# unless params[:q].nil?
-    else
+    # if !params[:q] && !params[:country]
+    #   @Search = Search.all(size:50)# unless params[:q].nil?
+    # else
+    if params[:q]
       @Search = Search.search(query: { match: {threat_id: params[:q]}},size:10) unless params[:q].nil?
+    else
+      @Search = Search.search(query: { match: {country: params[:country]}},size:10) unless params[:country].nil?
     end
+    # end
     #byebug
     @setting = Hashie::Mash.new Setting.first.preferences
     @single = Setting.first
@@ -24,8 +28,16 @@ class SearchController < ApplicationController
     @search_country = Search.search(size:0,aggs:{'group_by_country':{'terms':{'field':'country.raw'}}})
     @search_by_tri = Search.search(size:0,aggs:{'group_by_country':{'terms':{'field':'country.raw','order':{'average_threat_tri':'desc'}},aggs:{'average_threat_tri':{avg:{'field':'threat_tri'}}}}})
   end
+
   def show
-    @Search  = Search.search(query:{match: {_id: params[:id]}}).first
+    @setting = Hashie::Mash.new Setting.first.preferences
+    @single = Setting.first
+    @Search = Search.search(query:{match: {_id: params[:id]}}).first
+    @threat_history = []
+    Server.indexes.each do |index|
+      Search.index_name = index
+      @threat_history << Search.search(query:{match: {threat_id: @Search.threat_id}}).first
+    end
   end
 
   def edit
