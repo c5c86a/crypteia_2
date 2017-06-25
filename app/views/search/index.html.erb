@@ -207,8 +207,8 @@
 <div>
  <div class="col-md-4">
   <h3>Top 10</h3>
-  <%=pie_chart db_style(@Search)%>
-  <%#= column_chart db_style_top_10(@search1) %>
+  <%#=pie_chart db_style(@Search)%>
+  <%= column_chart db_style_top_10(@search1) %>
   <%= pie_chart db_style(@search_country)%>
  </div>
 

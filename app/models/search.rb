@@ -7,11 +7,8 @@ class Search < ApplicationRecord
   include Elasticsearch::DSL
 
 
-  def self.indexes
-    return Elasticsearch::Persistence.client.cat.indices(h: 'index', format: 'json', index: 'threatdb*', s: 'index').map {|x| x['index']}.sort.reverse!
-  end
 
-  index_name  indexes.first
+  index_name  Server.indexes.first
   document_type ''
 
   attribute :index , String , mapping: { fields: { index: {type: 'string'}}}
