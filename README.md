@@ -30,3 +30,10 @@ $>s = Setting.new
 
 rails s  
 
+## Notes
+
+For production use, the following changes are necessary:
+
+1. make model User confirmable
+2. change signed_up_but_unconfirmed of config/locales/devise.en.yml
+3. make sure that this list is complete...
