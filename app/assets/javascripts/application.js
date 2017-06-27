@@ -17,3 +17,5 @@
 //= require chartkick
 //= require Chart.bundle
 // require_tree .
+
+Chartkick.configure({mapsApiKey: "AIzaSyDbk1ilwyqw6j5gx4QsQA-LpRLNn-IbljA"})
