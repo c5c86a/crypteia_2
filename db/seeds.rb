@@ -7,9 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 Setting.delete_all
 s = Setting.new
-s.preferences = {"index_v":"1","country_v":"1","country_code_v":"0","threat_id_v":"0","host_v":"0","threat_tri_v":"0","risk_v":"0","asn_v":"0","asn_registry_v":"0",
-  "category_v":"0","category_description_v":"0","city_v":"0", "confidence_v":"0","continent_code_v":"0","location_v":"0","logid_v":"0",
-  "message":"0","source_ids_v":"0","threat_type_v":"0","type_v":"0",
-  "type_description_v":"0","global_filter_time_v":"0","lgstash_backend_v":"0","logstash_febe_latency_sec_v":"0",
-  "logstash_frontend_v":"0","raw_message_bytesize_v":"0","vendor_filter_time_v":"0","id_v":"0","srcevent_v":"0","timestamp_v":"0","vendor_v":"0","version_v":"0"}
+s.preferences = {"index":"1","country":"1","country_code":"0","threat_id":"0","host":"0","threat_tri":"0","risk":"0","asn":"0","asn_registry":"0",
+  "category":"0","category_description":"0","city":"0", "confidence":"0","continent_code":"0","location":"0","logid":"0",
+  "message":"0","source_ids":"0","threat_type":"0","type":"0",
+  "type_description":"0","global_filter_time":"0","lgstash_backend":"0","logstash_febe_latency_sec":"0",
+  "logstash_frontend":"0","raw_message_bytesize":"0","vendor_filter_time":"0","id":"0","srcevent":"0","timestamp":"0","vendor":"0","version":"0"}
   s.save

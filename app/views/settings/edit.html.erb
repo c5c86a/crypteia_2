@@ -9,132 +9,132 @@
         <div class="col-xs-4">
           <%=setting.fields_for :preferences  do |p|%>
             <li class="list-group-item">
-              <%=p.label :index_v%>
-              <%=p.check_box :index_v , checked: @hash.index_v.to_bool , class: "pull-right"%>
+              <%#=p.label :index%>
+              <%#=p.check_box :index , checked: @hash.index.to_bool , class: "pull-right"%>
             </li>
             <li class="list-group-item">
-              <%=p.label :country_v%>
-              <%=p.check_box :country_v , checked: @hash.country_v.to_bool, class: "pull-right"%>
+              <%=p.label :country%>
+              <%=p.check_box :country , checked: @hash.country.to_bool, class: "pull-right"%>
             </li>
             <li class="list-group-item">
-              <%=p.label :country_code_v%>
-              <%=p.check_box :country_code_v , checked: @hash.country_code_v.to_bool, class: "pull-right"%>
+              <%=p.label :country_code%>
+              <%=p.check_box :country_code , checked: @hash.country_code.to_bool, class: "pull-right"%>
             </li>
             <li class="list-group-item">
-              <%=p.label :threat_id_v%>
-              <%=p.check_box :threat_id_v , checked: @hash.threat_id_v.to_bool, class: "pull-right"%>
+              <%=p.label :threat_id%>
+              <%=p.check_box :threat_id , checked: @hash.threat_id.to_bool, class: "pull-right"%>
             </li>
             <li class="list-group-item">
-              <%=p.label :host_v%>
-              <%=p.check_box :host_v , checked: @hash.host_v.to_bool, class: "pull-right"%>
+              <%=p.label :host%>
+              <%=p.check_box :host , checked: @hash.host.to_bool, class: "pull-right"%>
             </li>
             <li class="list-group-item">
-              <%=p.label :threat_tri_v%>
-              <%=p.check_box :threat_tri_v , checked: @hash.threat_tri_v.to_bool, class: "pull-right"%>
+              <%=p.label :threat_tri%>
+              <%=p.check_box :threat_tri , checked: @hash.threat_tri.to_bool, class: "pull-right"%>
             </li>
             <li class="list-group-item">
-              <%=p.label :risk_v%>
-              <%=p.check_box :risk_v , checked: @hash.risk_v.to_bool, class: "pull-right"%>
+              <%=p.label :risk%>
+              <%=p.check_box :risk , checked: @hash.risk.to_bool, class: "pull-right"%>
             </li>
             <li class="list-group-item">
-              <%=p.label :asn_v%>
-              <%=p.check_box :asn_v , checked: @hash.asn_v.to_bool, class: "pull-right"%>
+              <%=p.label :asn%>
+              <%=p.check_box :asn , checked: @hash.asn.to_bool, class: "pull-right"%>
             </li>
             <li class="list-group-item">
-              <%=p.label :asn_registry_v%>
-              <%=p.check_box :asn_registry_v , checked: @hash.asn_registry_v.to_bool, class: "pull-right"%>
+              <%=p.label :asn_registry%>
+              <%=p.check_box :asn_registry , checked: @hash.asn_registry.to_bool, class: "pull-right"%>
             </li>
             <li class="list-group-item">
-              <%=p.label :category_v%>
-              <%=p.check_box :category_v , checked: @hash.category_v.to_bool, class: "pull-right"%>
+              <%=p.label :category%>
+              <%=p.check_box :category , checked: @hash.category.to_bool, class: "pull-right"%>
             </li>
             <li class="list-group-item">
-              <%=p.label :category_description_v%>
-              <%=p.check_box :category_description_v , checked: @hash.category_description_v.to_bool, class: "pull-right"%>
+              <%=p.label :category_description%>
+              <%=p.check_box :category_description , checked: @hash.category_description.to_bool, class: "pull-right"%>
             </li>
             <li class="list-group-item">
-              <%=p.label :city_v%>
-              <%=p.check_box :city_v , checked: @hash.city_v.to_bool, class: "pull-right"%>
+              <%=p.label :city%>
+              <%=p.check_box :city , checked: @hash.city.to_bool, class: "pull-right"%>
             </li>
             <li class="list-group-item">
-              <%=p.label :confidence_v%>
-              <%=p.check_box :confidence_v , checked: @hash.confidence_v.to_bool, class: "pull-right"%>
+              <%=p.label :confidence%>
+              <%=p.check_box :confidence , checked: @hash.confidence.to_bool, class: "pull-right"%>
             </li>
             <li class="list-group-item">
-              <%=p.label :continent_code_v%>
-              <%=p.check_box :continent_code_v , checked: @hash.continent_code_v.to_bool, class: "pull-right"%>
+              <%=p.label :continent_code%>
+              <%=p.check_box :continent_code , checked: @hash.continent_code.to_bool, class: "pull-right"%>
             </li>
             <li class="list-group-item">
-              <%=p.label :location_v%>
-              <%=p.check_box :location_v , checked: @hash.location_v.to_bool, class: "pull-right"%>
+              <%=p.label :location%>
+              <%=p.check_box :location , checked: @hash.location.to_bool, class: "pull-right"%>
             </li>
             <li class="list-group-item">
-              <%=p.label :logid_v%>
-              <%=p.check_box :logid_v , checked: @hash.logid_v.to_bool, class: "pull-right"%>
+              <%=p.label :logid%>
+              <%=p.check_box :logid , checked: @hash.logid.to_bool, class: "pull-right"%>
             </li>
             <li class="list-group-item">
-              <%=p.label :message_v%>
-              <%=p.check_box :message_v , checked: @hash.message.to_bool, class: "pull-right"%>
+              <%=p.label :message%>
+              <%=p.check_box :message , checked: @hash.message.to_bool, class: "pull-right"%>
             </li>
             <li class="list-group-item">
-              <%=p.label :source_ids_v%>
-              <%=p.check_box :source_ids_v , checked: @hash.source_ids_v.to_bool, class: "pull-right"%>
+              <%=p.label :source_ids%>
+              <%=p.check_box :source_ids , checked: @hash.source_ids.to_bool, class: "pull-right"%>
             </li>
             <li class="list-group-item">
-              <%=p.label :threat_type_v%>
-              <%=p.check_box :threat_type_v , checked: @hash.threat_type_v.to_bool, class: "pull-right"%>
+              <%=p.label :threat_type%>
+              <%=p.check_box :threat_type , checked: @hash.threat_type.to_bool, class: "pull-right"%>
             </li>
             <li class="list-group-item">
-              <%=p.label :type_v%>
-              <%=p.check_box :type_v , checked: @hash.type_v.to_bool, class: "pull-right"%>
+              <%=p.label :type%>
+              <%=p.check_box :type , checked: @hash.type.to_bool, class: "pull-right"%>
             </li>
             <li class="list-group-item">
-              <%=p.label :type_description_v%>
-              <%=p.check_box :type_description_v , checked: @hash.type_description_v.to_bool, class: "pull-right"%>
+              <%=p.label :type_description%>
+              <%=p.check_box :type_description , checked: @hash.type_description.to_bool, class: "pull-right"%>
             </li>
             <li class="list-group-item">
-              <%=p.label :global_filter_time_v%>
-              <%=p.check_box :global_filter_time_v , checked: @hash.global_filter_time_v.to_bool, class: "pull-right"%>
+              <%=p.label :global_filter_time%>
+              <%=p.check_box :global_filter_time , checked: @hash.global_filter_time.to_bool, class: "pull-right"%>
             </li>
             <li class="list-group-item">
-              <%=p.label :lgstash_backend_v%>
-              <%=p.check_box :logstash_backend_v , checked: @hash.logstash_backend_v.to_bool, class: "pull-right"%>
+              <%=p.label :lgstash_backend%>
+              <%=p.check_box :logstash_backend , checked: @hash.logstash_backend.to_bool, class: "pull-right"%>
             </li>
             <li class="list-group-item">
-              <%=p.label :logstash_febe_latency_sec_v%>
-              <%=p.check_box :logstash_febe_latency_sec_v , checked: @hash.logstash_febe_latency_sec_v.to_bool, class: "pull-right"%>
+              <%=p.label :logstash_febe_latency_sec%>
+              <%=p.check_box :logstash_febe_latency_sec , checked: @hash.logstash_febe_latency_sec.to_bool, class: "pull-right"%>
             </li>
             <li class="list-group-item">
-              <%=p.label :logstash_frontend_v%>
-              <%=p.check_box :logstash_frontend_v , checked: @hash.logstash_frontend_v.to_bool, class: "pull-right"%>
+              <%=p.label :logstash_frontend%>
+              <%=p.check_box :logstash_frontend , checked: @hash.logstash_frontend.to_bool, class: "pull-right"%>
             </li>
             <li class="list-group-item">
-              <%=p.label :raw_message_bytesize_v%>
-              <%=p.check_box :raw_message_bytesize_v , checked: @hash.raw_message_bytesize_v.to_bool, class: "pull-right"%>
+              <%=p.label :raw_message_bytesize%>
+              <%=p.check_box :raw_message_bytesize , checked: @hash.raw_message_bytesize.to_bool, class: "pull-right"%>
             </li>
             <li class="list-group-item">
-              <%=p.label :vendor_filter_time_v%>
-              <%=p.check_box :vendor_filter_time_v , checked: @hash.vendor_filter_time_v.to_bool, class: "pull-right"%>
+              <%=p.label :vendor_filter_time%>
+              <%=p.check_box :vendor_filter_time , checked: @hash.vendor_filter_time.to_bool, class: "pull-right"%>
             </li>
             <li class="list-group-item">
-              <%=p.label :id_v%>
-              <%=p.check_box :id_v , checked: @hash.id_v.to_bool, class: "pull-right"%>
+              <%=p.label :id%>
+              <%=p.check_box :id , checked: @hash.id.to_bool, class: "pull-right"%>
             </li>
             <li class="list-group-item">
-              <%=p.label :srcevent_v%>
-              <%=p.check_box :srcevent_v , checked: @hash.srcevent_v.to_bool, class: "pull-right"%>
+              <%=p.label :srcevent%>
+              <%=p.check_box :srcevent , checked: @hash.srcevent.to_bool, class: "pull-right"%>
             </li>
             <li class="list-group-item">
-              <%=p.label :timestamp_v%>
-              <%=p.check_box :timestamp_v , checked: @hash.timestamp_v.to_bool, class: "pull-right"%>
+              <%=p.label :timestamp%>
+              <%=p.check_box :timestamp , checked: @hash.timestamp.to_bool, class: "pull-right"%>
             </li>
             <li class="list-group-item">
-              <%=p.label :vendor_v%>
-              <%=p.check_box :vendor_v , checked: @hash.timestamp_v.to_bool, class: "pull-right"%>
+              <%=p.label :vendor%>
+              <%=p.check_box :vendor , checked: @hash.timestamp.to_bool, class: "pull-right"%>
             </li class="list-group-item">
             <li class="list-group-item">
-              <%=p.label :version_v%>
-              <%=p.check_box :version_v , checked: @hash.version_v.to_bool, class: "pull-right"%>
+              <%=p.label :version%>
+              <%=p.check_box :version , checked: @hash.version.to_bool, class: "pull-right"%>
             </li>
           <%end%>
         </div>
