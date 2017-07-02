@@ -3,9 +3,9 @@
     <ul class="list-group">
       <%if @Search%>
         <% @attr.each do |a|%>
-          <td>
-            <%= result.send(a.to_sym)%>
-          </td>
+          <li class="list-group-item">
+            <%= @Search.send(a.to_sym)%>
+          </li>
         <%end%>
         <%if current_user && current_user.is_admin %>
           <li class="list-group-item"><%= link_to "Edit", edit_search_path(@Search), class: "btn btn-primary" %></li>

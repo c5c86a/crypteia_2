@@ -43,6 +43,9 @@ class SearchController < ApplicationController
       Search.index_name = index
       @threat_history << Search.search(query:{match: {threat_id: @Search.threat_id}}).first
     end
+     @attr = []
+     @setting =Setting.first.preferences
+     @attr = @setting.to_a.select{|a| a.last == "1"}.map {|m| m.first}  # => byebug
   end
 
   def edit
