@@ -2,6 +2,10 @@
 [![codecov.io](https://codecov.io/github/nicosmaris/crypteia_2/coverage.svg?branch=master)](https://codecov.io/github/nicosmaris/crypteia_2?branch=master)
 [heroku](https://crypteia2.herokuapp.com/)
 
+# Intro
+
+This is a crowdsourcing app on threat intelligence in rails and analytics with the chartkick gem.
+
 # Environment variables
 
 The file config/secrets.yml is versioned as it just reads the environment variables SECRET_KEY_BASE , URL and PEM which are already set up at travis and heroku. To setup locally, ask us to provide you the file .env
@@ -34,6 +38,5 @@ rails s
 
 For production use, the following changes are necessary:
 
-1. make model User confirmable
-2. change signed_up_but_unconfirmed of config/locales/devise.en.yml
-3. make sure that this list is complete...
+1. make model User confirmable and setup mailcatcher
+2. make sure that this list is complete...
