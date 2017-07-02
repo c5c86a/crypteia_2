@@ -7,9 +7,6 @@
             <%= @Search.send(a.to_sym)%>
           </li>
         <%end%>
-        <%if current_user && current_user.is_admin %>
-          <li class="list-group-item"><%= link_to "Edit", edit_search_path(@Search), class: "btn btn-primary" %></li>
-        <%end%>
       <%end%>
     </ul>
   </div>
