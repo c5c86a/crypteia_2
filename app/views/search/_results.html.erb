@@ -8,9 +8,11 @@
                 <%= a.to_sym.to_s.humanize %>
               </th>
             <%end%>
-            <th>
-              Edit
-            </th>
+            <%if current_user && current_user.is_admin %>
+              <th>
+                Edit
+              </th>
+            <%end%>
           </tr>
       </thead>
         <tbody>
