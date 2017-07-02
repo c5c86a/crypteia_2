@@ -9,10 +9,9 @@
               </th>
             <%end%>
             <%if current_user && current_user.is_admin %>
-              <th>
-                Edit
-              </th>
+              <th>Edit</th>
             <%end%>
+            <th>Show</th>
           </tr>
       </thead>
         <tbody>
@@ -26,6 +25,7 @@
               <%if current_user && current_user.is_admin %>
                 <td><%= link_to "Edit", edit_search_path(result), class: "btn btn-primary" %></td>
               <%end%>
+              <td><%= link_to "Show", search_path(result), class: "btn btn-primary" %></td>
             </tr>
           <%end%>
         </tbody>
