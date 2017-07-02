@@ -2,8 +2,14 @@
   <div class="table-responsive">
     <table class="table table-bordered table-stripped table-hover ">
       <thead class="thead-inverse">
-        <tr>
-        </tr>
+          <tr>
+            <% @attr.each do |a|%>
+              <th>
+                <%= a.to_sym%>
+              </th>
+            <%end%>
+          </tr>
+ 
         <tbody>
           <%@Search.each do |result|%>
             <tr>
@@ -13,8 +19,8 @@
                 </td>
               <%end%>
             </tr>
-          </tbody>
-        <%end%>
+          <%end%>
+        </tbody>
       </table>
     </div>
   <%end%>
