@@ -8,8 +8,11 @@
                 <%= a.to_sym.to_s.humanize %>
               </th>
             <%end%>
+            <th>
+              Edit
+            </th>
           </tr>
- 
+      </thead>
         <tbody>
           <%@Search.each do |result|%>
             <tr>
@@ -17,6 +20,9 @@
                 <td>
                   <%= result.send(a.to_sym)%>
                 </td>
+              <%end%>
+              <%if current_user && current_user.is_admin %>
+                <td><%= link_to "Edit", edit_search_path(result), class: "btn btn-primary" %></td>
               <%end%>
             </tr>
           <%end%>
