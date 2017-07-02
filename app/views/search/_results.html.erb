@@ -5,7 +5,7 @@
           <tr>
             <% @attr.each do |a|%>
               <th>
-                <%= a.to_sym%>
+                <%= a.to_sym.to_s.humanize %>
               </th>
             <%end%>
           </tr>
