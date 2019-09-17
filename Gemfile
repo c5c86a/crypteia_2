@@ -40,7 +40,7 @@ gem "elasticsearch-persistence", require: 'elasticsearch/persistence/model'
 gem "elasticsearch-model"
 gem 'to_bool'
 gem 'elasticsearch-dsl'
-gem 'devise', '~> 4.3'
+gem 'devise', '~> 4.7'
 
 gem 'highcharts'
 gem 'countries'
